@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Script to generete request using a given API"""
+"""Script to generete request using a given APIs"""
 from sys import argv
 import requests
 
