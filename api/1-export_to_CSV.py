@@ -22,4 +22,3 @@ if __name__ == '__main__':
                              task.get('title')))
     with open(("{}.csv").format(uid), "w", encoding="utf-8") as f:
         f.write(csvs)
-
