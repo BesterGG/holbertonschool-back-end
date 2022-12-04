@@ -11,7 +11,7 @@ if __name__ == '__main__':
     todos_req = requests.get(
         'http://jsonplaceholder.typicode.com/todos').json()
     csvs = ""
-    name = str(user_request.get('name'))
+    name = str(user_request.get('username'))
     uid = argv[1]
     for task in todos_req:
         if task.get('userId') == int(argv[1]):
