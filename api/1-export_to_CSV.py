@@ -15,7 +15,7 @@ if __name__ == '__main__':
     uid = argv[1]
     for task in todos_req:
         if task.get('userId') == int(argv[1]):
-            csvs += ("\"{}\",\"{}\",\"{}\",\"{}\""
+            csvs += ("\"{}\",\"{}\",\"{}\",\"{}\"\n"
                      .format(uid,
                              name,
                              task.get('Completed'),
