@@ -1,0 +1,24 @@
+#!/usr/bin/python3
+"""Script to generete request using a given API"""
+from sys import argv
+import requests
+
+if __name__ == '__main__':
+    user_request = requests.get(
+        'http://jsonplaceholder.typicode.com/users/{}'.format(argv[1])).json()
+    todos_request = requests.get(
+        'http://jsonplaceholder.typicode.com/todos').json()
+    user_todos_list =
+    [x for x in todos_request if x.get('userId') == int(argv[1])]
+    # (x) Elemento dentro de los elementos de todos_request solamente si
+    user_completed_list =
+    [x for x in user_todos_list if x.get('completed') is True]
+    # Recorremos la lista de todos nuevamente para filtrar tareas completadas
+
+    print("Employee {} is done with tasks({}/{}):"
+          .format(
+               user_request.get('name'),
+               len(user_completed_list),
+               len(user_todos_list)))
+    for task in user_completed_list:
+        print("\t " + task.get('title'))
