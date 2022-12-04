@@ -18,7 +18,7 @@ if __name__ == '__main__':
             csvs += ("\"{}\",\"{}\",\"{}\",\"{}\"\n"
                      .format(uid,
                              name,
-                             task.get('Completed'),
+                             task.get('completed'),
                              task.get('title')))
     with open(("{}.csv").format(uid), "w", encoding="utf-8") as f:
         f.write(csvs)
