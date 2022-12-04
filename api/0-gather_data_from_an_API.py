@@ -5,7 +5,7 @@ import requests
 
 
 if __name__ == '__main__':
-    """Script"""
+    """Script for task0"""
     user_request = requests.get(
         'http://jsonplaceholder.typicode.com/users/{}'.format(argv[1])).json()
     todos_request = requests.get(
