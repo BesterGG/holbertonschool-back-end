@@ -14,10 +14,14 @@ if __name__ == '__main__':
     dic = {}
     name = str(user_request.get('username'))
     uid = argv[1]
-    dic = {"{}".format(int(argv[1])):
-           [{"task": task.get('title'),
-             "completed": task.get('completed'),
-             "username": user_request.get('username')} for task in todos_req]}
+    dic[uid] = []
+    for i in todos_req:
+        aux = {}
+        if i.get('userId') == int(uid):
+            aux['task'] = i.get('title')
+            aux['completed'] = i.get('completed')
+            aux['username'] = name
+            dic[uid].append(aux)
 
     with open(("{}").format(uid), "w", encoding='utf-8') as f:
         json.dump(dic, f)
